@@ -31,8 +31,8 @@ if (isset($_POST['kirim_otp'])) {
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'EMAIL_KAMU@gmail.com';       // <-- Ganti email aslimu
-            $mail->Password   = 'APP_PASSWORD_GOOGLE_KAMU';   // <-- Ganti 16 huruf App Password
+            $mail->Username   = 'jessileoo64@gmail.com';       // <-- Ganti email aslimu
+            $mail->Password   = 'yakqjewmnaciynob';   // <-- Ganti 16 huruf App Password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = 465;
 
