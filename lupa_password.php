@@ -28,7 +28,7 @@ if (isset($_POST['kirim_otp'])) {
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'jessileoo64@gmail.com';       // <-- Ganti email aslimu
+            $mail->Username   = '';       // <-- Ganti email aslimu
             $mail->Password   = '';   // <-- Ganti 16 huruf App Password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = 465;

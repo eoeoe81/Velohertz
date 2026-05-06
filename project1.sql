@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2026 at 03:25 PM
+-- Generation Time: May 06, 2026 at 05:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -2887,163 +2887,6 @@ INSERT INTO `artist` (`aid`, `aname`, `adesc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `follow`
---
-
-CREATE TABLE `follow` (
-  `uid` int(11) NOT NULL,
-  `fuid` int(11) NOT NULL,
-  `ftime` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `follow`
---
-
-INSERT INTO `follow` (`uid`, `fuid`, `ftime`) VALUES
-(2, 1, '2017-12-14 07:44:38'),
-(2, 3, '2017-12-14 16:43:32'),
-(2, 5, '2017-12-15 18:20:56'),
-(3, 2, '2017-12-14 15:20:22'),
-(3, 3, '2017-12-14 16:30:05');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `like`
---
-
-CREATE TABLE `like` (
-  `uid` int(11) NOT NULL,
-  `aid` varchar(22) NOT NULL,
-  `ltime` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `like`
---
-
-INSERT INTO `like` (`uid`, `aid`, `ltime`) VALUES
-(1, '001aJOc7CSQVo3XzoLG4DK', '2017-12-10 23:05:01'),
-(1, '00FQb4jTyendYWaN8pK0wa', '2017-12-12 21:46:18'),
-(1, '00YTqRClk82aMchQQpYMd5', '2017-12-12 21:46:19'),
-(1, '014WIDx7H4BRCHB1faiisK', '2017-12-12 21:46:21'),
-(1, '01N1aZStXA4yGvkz4vRXtJ', '2017-12-14 16:26:15'),
-(1, '01Ppu7N8uYJI8SAONo2YZA', '2017-12-12 21:46:27'),
-(1, '01rgao9OzfBm2BOHWJpi1Y', '2017-12-12 21:53:05'),
-(1, '026v3mvWdRvVdjL67VBySh', '2017-12-12 21:53:14'),
-(1, '02da1vDJ2hWqfK7aJL6SJm', '2017-12-12 22:19:28'),
-(1, '02rd0anEWfMtF7iMku9uor', '2017-12-12 22:19:33'),
-(1, '05Sne6IyNxaM7vexMvN84t', '2017-12-13 15:50:44'),
-(1, '0E1Kww16gRUVNLwX8Jsr6V', '2017-12-13 19:28:40'),
-(1, '0f4LCYJ0RohOZ4mnVBX6gO', '2017-12-12 21:53:01'),
-(1, '0Le4cOls5QDSc7WP5M2IOw', '2017-12-14 16:27:20'),
-(1, '0x3JvTqrkjnkVD3hTCdNV1', '2017-12-14 16:26:17'),
-(1, '1sX1MkGoDKuMzzhaALPFyZ', '2017-12-12 21:39:34'),
-(1, '1Yox196W7bzVNZI7RBaPnf', '2017-12-13 15:14:43'),
-(1, '3IYUhFvPQItj6xySrBmZkd', '2017-12-10 20:29:10'),
-(1, '3jwm6OBdUY5xzFiFIPhMHu', '2017-12-13 15:18:33'),
-(1, '3kjuyTCjPG1WMFCiyc5IuB', '2017-12-13 15:21:54'),
-(1, '3RzKUFibkTJSL1n4huA3oj', '2017-12-10 01:35:24'),
-(1, '3VQfHuqrRK1CNXR1V8PeR9', '2017-12-12 22:09:20'),
-(1, '4Se104PDIxemxBgtWynyIq', '2017-12-10 01:38:48'),
-(1, '5BKzvAPtNXnt0LwzGvKOH3', '2017-12-10 01:40:54'),
-(1, '6cEuCEZu7PAE9ZSzLLc2oQ', '2017-12-12 22:12:53'),
-(1, '7A9VsjiTGQr0nKn2DbBL0s', '2017-12-13 15:23:44'),
-(2, '001aJOc7CSQVo3XzoLG4DK', '2017-12-15 18:23:37'),
-(2, '01N1aZStXA4yGvkz4vRXtJ', '2017-12-12 21:05:58'),
-(2, '05Sne6IyNxaM7vexMvN84t', '2017-12-14 17:17:12'),
-(2, '0f4LCYJ0RohOZ4mnVBX6gO', '2017-12-14 17:17:15'),
-(2, '0Le4cOls5QDSc7WP5M2IOw', '2017-12-14 17:18:14'),
-(2, '0NWbwDZY1VkRqFafuQm6wk', '2017-12-13 15:09:07'),
-(2, '0x3JvTqrkjnkVD3hTCdNV1', '2017-12-12 21:04:19'),
-(2, '108ugtkRFQzP9nGgNiyERO', '2017-12-12 21:07:04'),
-(2, '2sd9Q3r0Jhqpe3w9WVuG43', '2017-12-12 21:07:16'),
-(2, '3IYUhFvPQItj6xySrBmZkd', '2017-12-12 21:19:00'),
-(2, '3jwm6OBdUY5xzFiFIPhMHu', '2017-12-14 17:17:18'),
-(2, '3Q8wgwyVVv0z4UEh1HB0KY', '2017-12-12 21:19:28'),
-(2, '3VQfHuqrRK1CNXR1V8PeR9', '2017-12-12 22:31:46'),
-(2, '5aYyPjAsLj7UzANzdupwnS', '2017-12-14 07:01:10'),
-(2, '5BKzvAPtNXnt0LwzGvKOH3', '2017-12-13 14:50:18'),
-(2, '7A9VsjiTGQr0nKn2DbBL0s', '2017-12-13 15:06:04'),
-(3, '108ugtkRFQzP9nGgNiyERO', '2017-12-14 15:14:42');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `play`
---
-
-CREATE TABLE `play` (
-  `uid` int(11) NOT NULL,
-  `tid` varchar(22) NOT NULL,
-  `ptime` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `play`
---
-
-INSERT INTO `play` (`uid`, `tid`, `ptime`) VALUES
-(1, '00pFKTsXTYfLwGlNnUYETw', '2017-12-14 16:08:09'),
-(1, '0171XsIM2xyeXRr6wsugEI', '2017-12-14 16:33:27'),
-(1, '0171XsIM2xyeXRr6wsugEI', '2017-12-14 16:33:29'),
-(1, '0171XsIM2xyeXRr6wsugEI', '2017-12-14 16:40:51'),
-(2, '0171XsIM2xyeXRr6wsugEI', '2017-12-14 16:31:29'),
-(2, '0171XsIM2xyeXRr6wsugEI', '2017-12-14 16:31:32'),
-(2, '0171XsIM2xyeXRr6wsugEI', '2017-12-14 17:16:59'),
-(2, '01blz69gjLm7eTSDIwVBi2', '2017-12-15 18:31:39'),
-(1, '02SFFp0LUn2rHM5P2sWQ8B', '2017-12-14 06:16:16'),
-(2, '07NxDD1iKCHbAldceD7QLP', '2017-12-14 07:33:00'),
-(2, '0BHNx4kXZBpSjtgc4WNaDz', '2017-12-14 07:24:45'),
-(2, '0BHNx4kXZBpSjtgc4WNaDz', '2017-12-14 16:43:16'),
-(2, '0BHNx4kXZBpSjtgc4WNaDz', '2017-12-14 17:08:55'),
-(2, '0fF2vHE8TaB4XHExalmBP8', '2017-12-14 17:19:09'),
-(2, '0hpyxcJgdDLfC6NAYYdy7o', '2017-12-14 07:36:43'),
-(2, '0hpyxcJgdDLfC6NAYYdy7o', '2017-12-14 17:37:40'),
-(2, '0HRqyCxfo2X8ix2HhqAWpX', '2017-12-14 07:23:01'),
-(2, '0HRqyCxfo2X8ix2HhqAWpX', '2017-12-14 07:32:26'),
-(1, '0LbaxqqbUVE1kANizaaL0F', '2017-12-14 06:52:29'),
-(1, '0Lf5evFei2z92kAxQzapy7', '2017-12-14 05:45:19'),
-(3, '0Lf5evFei2z92kAxQzapy7', '2017-12-14 16:29:26'),
-(1, '10RQKVSr4rS0coExTmi4dF', '2017-12-13 21:11:52'),
-(3, '10RQKVSr4rS0coExTmi4dF', '2017-12-14 16:29:32'),
-(2, '11KJSRSgaDxqydKYiD2Jew', '2017-12-14 17:16:40'),
-(2, '1B3by2JG1RwIWPDxs3YUJQ', '2017-12-14 16:42:13'),
-(1, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-13 21:20:14'),
-(1, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-14 15:18:59'),
-(1, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-14 15:49:00'),
-(1, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-14 16:08:21'),
-(1, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-14 16:10:38'),
-(1, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-14 16:26:35'),
-(1, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-14 16:27:59'),
-(1, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-15 15:44:30'),
-(2, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-14 07:15:10'),
-(2, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-14 07:32:14'),
-(3, '1C2oqfFOezyq2ylmcwuw8y', '2017-12-14 15:15:16'),
-(1, '1gTs3Mh1UjNvfKMkTMUOj1', '2017-12-14 16:40:47'),
-(1, '1gTs3Mh1UjNvfKMkTMUOj1', '2017-12-14 16:40:53'),
-(2, '1gTs3Mh1UjNvfKMkTMUOj1', '2017-12-14 16:43:09'),
-(1, '1nX4VLG50VzERLthNEXWtY', '2017-12-14 06:51:37'),
-(1, '2Mi54B9H3NfL97fzImwDnX', '2017-12-13 21:12:04'),
-(1, '2Mi54B9H3NfL97fzImwDnX', '2017-12-14 16:26:20'),
-(1, '2pJ5oIMxBbOvfqBbfyFDbd', '2017-12-14 05:43:38'),
-(1, '4Sr1t0Di99z5EA0Af3nl2o', '2017-12-15 15:43:25'),
-(2, '4Sr1t0Di99z5EA0Af3nl2o', '2017-12-14 07:44:10'),
-(1, '4vb4mFvYsr2h6enhjJsq9Y', '2017-12-13 21:13:06'),
-(1, '4vb4mFvYsr2h6enhjJsq9Y', '2017-12-14 16:10:51'),
-(1, '4wJEGLWSUU7OYsyRXUCV5p', '2017-12-14 16:40:54'),
-(2, '4wJEGLWSUU7OYsyRXUCV5p', '2017-12-14 16:42:48'),
-(2, '4wJEGLWSUU7OYsyRXUCV5p', '2017-12-14 16:42:50'),
-(1, '6i4AhEKKrOhstqhZoiO2E1', '2017-12-13 21:12:07'),
-(1, '6MuiAJ0yUfYdSVfpj3bbNd', '2017-12-14 16:34:21'),
-(1, '6MuiAJ0yUfYdSVfpj3bbNd', '2017-12-14 16:40:56'),
-(1, '6xWWj9xtkuns8DzjNtV36Z', '2017-12-14 06:27:00'),
-(1, '7GftdZpTPySU5sSi81hNTH', '2017-12-14 16:10:46');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `playlist`
 --
 
@@ -3075,42 +2918,6 @@ INSERT INTO `playlist` (`pid`, `ptitle`, `pdate`, `pavailable`, `pdesc`, `uid`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `playlistcontain`
---
-
-CREATE TABLE `playlistcontain` (
-  `pid` int(11) NOT NULL,
-  `tid` varchar(22) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `playlistcontain`
---
-
-INSERT INTO `playlistcontain` (`pid`, `tid`) VALUES
-(3, '0hpyxcJgdDLfC6NAYYdy7o'),
-(3, '0HRqyCxfo2X8ix2HhqAWpX'),
-(3, '11KJSRSgaDxqydKYiD2Jew'),
-(3, '1a8BwCPOZsuqafg39UkTSO'),
-(3, '1B3by2JG1RwIWPDxs3YUJQ'),
-(4, '10RQKVSr4rS0coExTmi4dF'),
-(5, '0BHNx4kXZBpSjtgc4WNaDz'),
-(5, '1gTs3Mh1UjNvfKMkTMUOj1'),
-(8, '00IH8ZjI9ZGB51WRX1Oesj'),
-(8, '0171XsIM2xyeXRr6wsugEI'),
-(8, '12VWzyPDBCc8fqeWCAfNwR'),
-(8, '2NMjRPEeyziyj9UHtKpDiV'),
-(13, '00IH8ZjI9ZGB51WRX1Oesj'),
-(13, '12VWzyPDBCc8fqeWCAfNwR'),
-(13, '7qiZfU4dY1lWllzX7mPBI3'),
-(14, '02LcooLYmFR08YONvRe4qD'),
-(14, '03GdNYxpBWXBzeg2rG1COv'),
-(14, '05rkjXZcsvX6aOsXEBfQlI'),
-(15, '00IH8ZjI9ZGB51WRX1Oesj');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `profile`
 --
 
@@ -3132,64 +2939,6 @@ INSERT INTO `profile` (`uid`, `preferrence`) VALUES
 (3, 'Interesting'),
 (1, 'adfad'),
 (2, 'dfadfa');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `rate`
---
-
-CREATE TABLE `rate` (
-  `uid` int(11) NOT NULL,
-  `tid` varchar(22) NOT NULL,
-  `stars` int(11) NOT NULL,
-  `rtime` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `rate`
---
-
-INSERT INTO `rate` (`uid`, `tid`, `stars`, `rtime`) VALUES
-(1, '00pFKTsXTYfLwGlNnUYETw', 5, '2017-12-13 15:26:11'),
-(1, '0171XsIM2xyeXRr6wsugEI', 4, '2017-12-13 15:25:40'),
-(1, '01blz69gjLm7eTSDIwVBi2', 0, '2017-12-13 15:25:56'),
-(1, '022TgXGyKTNkYKzY998KvX', 5, '2017-12-14 06:26:33'),
-(1, '045z6ZTzvzWXGhGdq27qGt', 4, '2017-12-15 15:43:07'),
-(1, '0Lf5evFei2z92kAxQzapy7', 5, '2017-12-13 16:03:18'),
-(1, '10RQKVSr4rS0coExTmi4dF', 5, '2017-12-13 16:39:01'),
-(1, '1B3by2JG1RwIWPDxs3YUJQ', 3, '2017-12-13 15:31:52'),
-(1, '1C2oqfFOezyq2ylmcwuw8y', 4, '2017-12-14 16:27:43'),
-(1, '1gTs3Mh1UjNvfKMkTMUOj1', 5, '2017-12-14 16:40:20'),
-(1, '1nX4VLG50VzERLthNEXWtY', 4, '2017-12-14 06:51:32'),
-(1, '1P17dC1amhFzptugyAO7Il', 4, '2017-12-14 16:27:28'),
-(1, '2dsjHOGIo9kmfOc19tkeUt', 4, '2017-12-15 15:43:22'),
-(1, '4aebBr4JAihzJQR0CiIZJv', 0, '2017-12-13 17:51:25'),
-(1, '4wJEGLWSUU7OYsyRXUCV5p', 5, '2017-12-14 16:40:24'),
-(1, '6MuiAJ0yUfYdSVfpj3bbNd', 4, '2017-12-14 16:34:12'),
-(2, '00IH8ZjI9ZGB51WRX1Oesj', 0, '2017-12-12 22:38:42'),
-(2, '00LgzydyFRLOLUx4buocwd', 1, '2017-12-12 22:38:53'),
-(2, '00pFKTsXTYfLwGlNnUYETw', 0, '2017-12-14 16:31:13'),
-(2, '0171XsIM2xyeXRr6wsugEI', 4, '2017-12-14 16:31:01'),
-(2, '022TgXGyKTNkYKzY998KvX', 1, '2017-12-14 16:31:05'),
-(2, '07NxDD1iKCHbAldceD7QLP', 4, '2017-12-14 17:19:02'),
-(2, '0BHNx4kXZBpSjtgc4WNaDz', 0, '2017-12-14 16:31:06'),
-(2, '0hpyxcJgdDLfC6NAYYdy7o', 0, '2017-12-14 07:14:53'),
-(2, '0HRqyCxfo2X8ix2HhqAWpX', 2, '2017-12-14 07:43:45'),
-(2, '0Lf5evFei2z92kAxQzapy7', 0, '2017-12-14 16:31:07'),
-(2, '10RQKVSr4rS0coExTmi4dF', 0, '2017-12-14 16:31:08'),
-(2, '11KJSRSgaDxqydKYiD2Jew', 3, '2017-12-14 16:44:05'),
-(2, '1B3by2JG1RwIWPDxs3YUJQ', 4, '2017-12-14 16:42:17'),
-(2, '1C2oqfFOezyq2ylmcwuw8y', 0, '2017-12-14 16:31:09'),
-(2, '1gTs3Mh1UjNvfKMkTMUOj1', 5, '2017-12-14 16:42:31'),
-(2, '1nX4VLG50VzERLthNEXWtY', 0, '2017-12-14 16:31:11'),
-(2, '1P17dC1amhFzptugyAO7Il', 0, '2017-12-14 16:31:12'),
-(2, '2dsjHOGIo9kmfOc19tkeUt', 4, '2017-12-14 17:17:26'),
-(2, '4wJEGLWSUU7OYsyRXUCV5p', 1, '2017-12-14 16:42:39'),
-(2, '6MuiAJ0yUfYdSVfpj3bbNd', 0, '2017-12-14 16:42:45'),
-(3, '0BHNx4kXZBpSjtgc4WNaDz', 4, '2017-12-14 16:29:56'),
-(3, '10RQKVSr4rS0coExTmi4dF', 4, '2017-12-14 15:14:51'),
-(3, '1C2oqfFOezyq2ylmcwuw8y', 4, '2017-12-14 15:14:56');
 
 -- --------------------------------------------------------
 
@@ -5219,7 +4968,8 @@ INSERT INTO `track` (`tid`, `ttitle`, `duration`, `aname`, `alid`) VALUES
 ('trk_69e1a62c23aca', 'Cruel Summer', '200000', 'Taylor Swift', 'alb_69e1a4f38877f'),
 ('trk_69e1a65e1e007', 'Die With A Smile', '200000', 'Lady Gaga & Bruno Mars', 'alb_69e1a4f38877f'),
 ('trk_69e1a6787fe92', 'Yellow', '200000', 'Coldplay', 'alb_69e1a4f38877f'),
-('trk_69e1a6d9714d2', 'California Gurls', '200000', 'Katy Perry', 'alb_69e1a4f38877f');
+('trk_69e1a6d9714d2', 'California Gurls', '200000', 'Katy Perry', 'alb_69e1a4f38877f'),
+('trk_69fb46a839a79', 'blue', '200000', 'yung kai', '6w36pmMA5bxECalu5rxQAw');
 
 -- --------------------------------------------------------
 
@@ -5241,9 +4991,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`uid`, `uname`, `email`, `upassword`, `profile_pic`) VALUES
 (1, 'ab', 'jessileoo64@gmail.com', '$2y$10$cyeJktzP3fdl0N4vIrBmC.AuVuDOHrH7B.RMfpJzaVIhslWTNYXpe', 'profil_69e1b85426a35.jpeg'),
-(2, 'admin', 'kentofukuyama58@gmail.com', '$2y$10$83mNbfhlnLjCM9fcp44ckOMQXL0N6acIwQ5unk7cFzDJRCGpT3Prq', 'profil_69e1ab13456c6.jpg'),
+(2, 'admin', 'kentofukuyama58@gmail.com', '$2y$10$KxFwUV6glDyzhDQdNjnOt.UkLoAQpG/YxTwCvJIt2TNU8lr.JNZfq', 'profil_69e1ab13456c6.jpg'),
 (3, 'llevtan', 'anastasialimz1101@gmail.com', '$2y$10$iJSfndr5U619ozfLTXoqr.8AVM38WmAxcyUsKKGSVAaTmo/Tsn1UK', 'default.png'),
-(4, 'carla', 'tandionocarla.10@gmail.com', '$2y$10$uBWOiYdRWf09Fvruz5wfi.X0pOvzHLWSQWPSf8Z48X1xW57xajapm', 'default.png');
+(4, 'carla', 'tandionocarla.10@gmail.com', '$2y$10$uBWOiYdRWf09Fvruz5wfi.X0pOvzHLWSQWPSf8Z48X1xW57xajapm', 'default.png'),
+(5, 'abc', 'kingpakan302@gmail.com', '$2y$10$Hx5ijW7L7eEUjzov9nyrtuF8E9Iw/SbKwaTJmk2dt/srZ0wx1zPcW', 'default.png');
 
 --
 -- Indexes for dumped tables
@@ -5262,27 +5013,6 @@ ALTER TABLE `artist`
   ADD PRIMARY KEY (`aid`);
 
 --
--- Indexes for table `follow`
---
-ALTER TABLE `follow`
-  ADD PRIMARY KEY (`uid`,`fuid`),
-  ADD KEY `fuid` (`fuid`);
-
---
--- Indexes for table `like`
---
-ALTER TABLE `like`
-  ADD PRIMARY KEY (`uid`,`aid`),
-  ADD KEY `like_ibfk_2` (`aid`);
-
---
--- Indexes for table `play`
---
-ALTER TABLE `play`
-  ADD PRIMARY KEY (`uid`,`ptime`),
-  ADD KEY `play_ibfk_2` (`tid`);
-
---
 -- Indexes for table `playlist`
 --
 ALTER TABLE `playlist`
@@ -5290,24 +5020,10 @@ ALTER TABLE `playlist`
   ADD KEY `uid` (`uid`);
 
 --
--- Indexes for table `playlistcontain`
---
-ALTER TABLE `playlistcontain`
-  ADD PRIMARY KEY (`pid`,`tid`),
-  ADD KEY `playlistcontain_ibfk_2` (`tid`);
-
---
 -- Indexes for table `profile`
 --
 ALTER TABLE `profile`
   ADD KEY `profile_ibfk_1` (`uid`);
-
---
--- Indexes for table `rate`
---
-ALTER TABLE `rate`
-  ADD PRIMARY KEY (`uid`,`tid`),
-  ADD KEY `rate_ibfk_2` (`tid`);
 
 --
 -- Indexes for table `track`
@@ -5339,32 +5055,11 @@ ALTER TABLE `playlist`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `follow`
---
-ALTER TABLE `follow`
-  ADD CONSTRAINT `follow_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`),
-  ADD CONSTRAINT `follow_ibfk_2` FOREIGN KEY (`fuid`) REFERENCES `user` (`uid`);
-
---
--- Constraints for table `like`
---
-ALTER TABLE `like`
-  ADD CONSTRAINT `like_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`),
-  ADD CONSTRAINT `like_ibfk_2` FOREIGN KEY (`aid`) REFERENCES `artist` (`aid`);
-
---
--- Constraints for table `play`
---
-ALTER TABLE `play`
-  ADD CONSTRAINT `play_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`),
-  ADD CONSTRAINT `play_ibfk_2` FOREIGN KEY (`tid`) REFERENCES `track` (`tid`);
 
 --
 -- Constraints for table `playlist`
@@ -5373,24 +5068,10 @@ ALTER TABLE `playlist`
   ADD CONSTRAINT `playlist_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`);
 
 --
--- Constraints for table `playlistcontain`
---
-ALTER TABLE `playlistcontain`
-  ADD CONSTRAINT `playlistcontain_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `playlist` (`pid`),
-  ADD CONSTRAINT `playlistcontain_ibfk_2` FOREIGN KEY (`tid`) REFERENCES `track` (`tid`);
-
---
 -- Constraints for table `profile`
 --
 ALTER TABLE `profile`
   ADD CONSTRAINT `profile_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`);
-
---
--- Constraints for table `rate`
---
-ALTER TABLE `rate`
-  ADD CONSTRAINT `rate_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`),
-  ADD CONSTRAINT `rate_ibfk_2` FOREIGN KEY (`tid`) REFERENCES `track` (`tid`);
 
 --
 -- Constraints for table `track`
