@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2026 at 05:16 PM
+-- Generation Time: May 07, 2026 at 06:46 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -2918,6 +2918,42 @@ INSERT INTO `playlist` (`pid`, `ptitle`, `pdate`, `pavailable`, `pdesc`, `uid`) 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `playlistcontain`
+--
+
+CREATE TABLE `playlistcontain` (
+  `pid` int(11) NOT NULL,
+  `tid` varchar(22) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `playlistcontain`
+--
+
+INSERT INTO `playlistcontain` (`pid`, `tid`) VALUES
+(3, '0hpyxcJgdDLfC6NAYYdy7o'),
+(3, '0HRqyCxfo2X8ix2HhqAWpX'),
+(3, '11KJSRSgaDxqydKYiD2Jew'),
+(3, '1a8BwCPOZsuqafg39UkTSO'),
+(3, '1B3by2JG1RwIWPDxs3YUJQ'),
+(4, '10RQKVSr4rS0coExTmi4dF'),
+(5, '0BHNx4kXZBpSjtgc4WNaDz'),
+(5, '1gTs3Mh1UjNvfKMkTMUOj1'),
+(8, '00IH8ZjI9ZGB51WRX1Oesj'),
+(8, '0171XsIM2xyeXRr6wsugEI'),
+(8, '12VWzyPDBCc8fqeWCAfNwR'),
+(8, '2NMjRPEeyziyj9UHtKpDiV'),
+(13, '00IH8ZjI9ZGB51WRX1Oesj'),
+(13, '12VWzyPDBCc8fqeWCAfNwR'),
+(13, '7qiZfU4dY1lWllzX7mPBI3'),
+(14, '02LcooLYmFR08YONvRe4qD'),
+(14, '03GdNYxpBWXBzeg2rG1COv'),
+(14, '05rkjXZcsvX6aOsXEBfQlI'),
+(15, '00IH8ZjI9ZGB51WRX1Oesj');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `profile`
 --
 
@@ -4968,8 +5004,7 @@ INSERT INTO `track` (`tid`, `ttitle`, `duration`, `aname`, `alid`) VALUES
 ('trk_69e1a62c23aca', 'Cruel Summer', '200000', 'Taylor Swift', 'alb_69e1a4f38877f'),
 ('trk_69e1a65e1e007', 'Die With A Smile', '200000', 'Lady Gaga & Bruno Mars', 'alb_69e1a4f38877f'),
 ('trk_69e1a6787fe92', 'Yellow', '200000', 'Coldplay', 'alb_69e1a4f38877f'),
-('trk_69e1a6d9714d2', 'California Gurls', '200000', 'Katy Perry', 'alb_69e1a4f38877f'),
-('trk_69fb46a839a79', 'blue', '200000', 'yung kai', '6w36pmMA5bxECalu5rxQAw');
+('trk_69e1a6d9714d2', 'California Gurls', '200000', 'Katy Perry', 'alb_69e1a4f38877f');
 
 -- --------------------------------------------------------
 
@@ -4991,10 +5026,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`uid`, `uname`, `email`, `upassword`, `profile_pic`) VALUES
 (1, 'ab', 'jessileoo64@gmail.com', '$2y$10$cyeJktzP3fdl0N4vIrBmC.AuVuDOHrH7B.RMfpJzaVIhslWTNYXpe', 'profil_69e1b85426a35.jpeg'),
-(2, 'admin', 'kentofukuyama58@gmail.com', '$2y$10$KxFwUV6glDyzhDQdNjnOt.UkLoAQpG/YxTwCvJIt2TNU8lr.JNZfq', 'profil_69e1ab13456c6.jpg'),
+(2, 'admin', 'kentofukuyama58@gmail.com', '$2y$10$83mNbfhlnLjCM9fcp44ckOMQXL0N6acIwQ5unk7cFzDJRCGpT3Prq', 'profil_69e1ab13456c6.jpg'),
 (3, 'llevtan', 'anastasialimz1101@gmail.com', '$2y$10$iJSfndr5U619ozfLTXoqr.8AVM38WmAxcyUsKKGSVAaTmo/Tsn1UK', 'default.png'),
-(4, 'carla', 'tandionocarla.10@gmail.com', '$2y$10$uBWOiYdRWf09Fvruz5wfi.X0pOvzHLWSQWPSf8Z48X1xW57xajapm', 'default.png'),
-(5, 'abc', 'kingpakan302@gmail.com', '$2y$10$Hx5ijW7L7eEUjzov9nyrtuF8E9Iw/SbKwaTJmk2dt/srZ0wx1zPcW', 'default.png');
+(4, 'carla', 'tandionocarla.10@gmail.com', '$2y$10$uBWOiYdRWf09Fvruz5wfi.X0pOvzHLWSQWPSf8Z48X1xW57xajapm', 'default.png');
 
 --
 -- Indexes for dumped tables
@@ -5018,6 +5052,13 @@ ALTER TABLE `artist`
 ALTER TABLE `playlist`
   ADD PRIMARY KEY (`pid`),
   ADD KEY `uid` (`uid`);
+
+--
+-- Indexes for table `playlistcontain`
+--
+ALTER TABLE `playlistcontain`
+  ADD PRIMARY KEY (`pid`,`tid`),
+  ADD KEY `playlistcontain_ibfk_2` (`tid`);
 
 --
 -- Indexes for table `profile`
@@ -5055,29 +5096,7 @@ ALTER TABLE `playlist`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `playlist`
---
-ALTER TABLE `playlist`
-  ADD CONSTRAINT `playlist_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`);
-
---
--- Constraints for table `profile`
---
-ALTER TABLE `profile`
-  ADD CONSTRAINT `profile_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`);
-
---
--- Constraints for table `track`
---
-ALTER TABLE `track`
-  ADD CONSTRAINT `track_ibfk_1` FOREIGN KEY (`alid`) REFERENCES `album` (`alid`);
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
